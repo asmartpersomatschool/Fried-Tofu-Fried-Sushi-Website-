@@ -485,3 +485,62 @@ button:hover {
         padding: 6px 12px;
     }
 }
+/* Poll Styles */
+.poll-container {
+    padding: 60px 20px;
+    text-align: center;
+    background: white;
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.poll-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.poll-card {
+    background: var(--soft-bg);
+    padding: 30px;
+    border-radius: 20px;
+    width: 250px;
+    cursor: pointer;
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.poll-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--green);
+}
+
+.poll-emoji { font-size: 3rem; display: block; margin-bottom: 10px; }
+
+.poll-vs {
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+.progress-bar {
+    background: #eee;
+    height: 12px;
+    border-radius: 10px;
+    margin: 15px 0 5px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 1s ease-out;
+}
+
+#tofu-bar { background: var(--green); }
+#sushi-bar { background: var(--sushi-red); }
