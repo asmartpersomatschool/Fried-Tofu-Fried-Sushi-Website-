@@ -430,3 +430,33 @@ function updateSushi() {
 sushiStartBtn.addEventListener('click', initSushiGame);
 sushiRetryBtn.addEventListener('click', initSushiGame);
 sushiPlayAgainBtn.addEventListener('click', initSushiGame);
+// Poll Logic
+function updatePollUI() {
+    const tofuVotes = parseInt(localStorage.getItem('tofuVotes') || 0);
+    const sushiVotes = parseInt(localStorage.getItem('sushiVotes') || 0);
+    const total = tofuVotes + sushiVotes;
+
+    if (total > 0) {
+        const tofuPct = Math.round((tofuVotes / total) * 100);
+        const sushiPct = Math.round((sushiVotes / total) * 100);
+
+        document.getElementById('tofu-bar').style.width = tofuPct + '%';
+        document.getElementById('sushi-bar').style.width = sushiPct + '%';
+        document.getElementById('tofu-percent').innerText = tofuPct + '%';
+        document.getElementById('sushi-percent').innerText = sushiPct + '%';
+    }
+}
+
+function castVote(choice) {
+    const currentVotes = parseInt(localStorage.getItem(choice + 'Votes') || 0);
+    localStorage.setItem(choice + 'Votes', currentVotes + 1);
+    
+    document.getElementById('poll-thanks').style.display = 'block';
+    updatePollUI();
+    
+    // Disable clicking after vote
+    document.querySelectorAll('.poll-card').forEach(card => card.style.pointerEvents = 'none');
+}
+
+// Initialize poll on load
+updatePollUI();
