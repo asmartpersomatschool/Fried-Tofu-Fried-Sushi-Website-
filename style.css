@@ -1,0 +1,487 @@
+:root {
+    --gold: #FFC107;
+    --green: #2ecc71;
+    --dark-green: #27ae60;
+    --dark: #1e272e;
+    --soft-bg: #fdfaf6;
+    --sushi-red: #e74c3c;
+    --sushi-dark: #c0392b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    background: var(--soft-bg);
+    color: #2d3436;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Navigation */
+.main-nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 15px;
+    background: rgba(255,255,255,0.95);
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: bold;
+    font-family: 'Fredoka';
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 25px;
+}
+
+.nav-link:hover {
+    background: var(--gold);
+    color: white;
+    transform: translateY(-2px);
+}
+
+section {
+    min-height: 100vh;
+}
+
+/* Floating Animation Background */
+.floating-scallions {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.05;
+}
+
+.scallion-float {
+    position: absolute;
+    font-size: 30px;
+    animation: float-diagonal 15s infinite ease-in-out;
+}
+
+.scallion-float:nth-child(1) { left: 10%; animation-delay: 0s; }
+.scallion-float:nth-child(2) { left: 30%; animation-delay: 3s; }
+.scallion-float:nth-child(3) { left: 50%; animation-delay: 6s; }
+.scallion-float:nth-child(4) { left: 70%; animation-delay: 9s; }
+.scallion-float:nth-child(5) { left: 90%; animation-delay: 12s; }
+
+@keyframes float-diagonal {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(360deg); }
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('Vietnamese-Fried-Tofu-with-Scallions-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 3.5rem;
+    margin: 0;
+    text-shadow: 3px 3px 15px rgba(0,0,0,0.7);
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    margin-top: 10px;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes titleGlow {
+    0%, 100% { text-shadow: 3px 3px 15px rgba(255,193,7,0.5); }
+    50% { text-shadow: 3px 3px 25px rgba(255,193,7,0.8), 0 0 40px rgba(255,193,7,0.4); }
+}
+
+/* Content Layout */
+.container {
+    max-width: 900px;
+    margin: -50px auto 50px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.content-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    animation: fadeInUp 0.8s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.dish-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+}
+
+.dish-image:hover {
+    transform: scale(1.05);
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Recipe Grid */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+}
+
+@media (max-width: 600px) {
+    .recipe-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2rem; }
+    .image-gallery { grid-template-columns: 1fr; }
+}
+
+h2 { 
+    color: var(--dark-green); 
+    font-family: 'Fredoka'; 
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--gold);
+    transition: width 0.4s ease;
+}
+
+.content-card:hover h2::after {
+    width: 100%;
+}
+
+ul li {
+    margin: 10px 0;
+    transition: transform 0.2s ease;
+}
+
+ul li:hover {
+    transform: translateX(5px);
+}
+
+/* Game Styles */
+.game-section {
+    background: linear-gradient(135deg, var(--dark) 0%, #34495e 100%);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.game-viewport {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background: linear-gradient(180deg, #1e272e 0%, #2c3e50 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 15px;
+    border: 4px solid var(--gold);
+    cursor: none;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.5);
+}
+
+canvas { width: 100%; height: 100%; display: block; }
+
+.overlay {
+    position: absolute; 
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    z-index: 10;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.score-display {
+    position: absolute; 
+    top: 10px; 
+    left: 10px;
+    font-size: 24px; 
+    font-weight: bold; 
+    color: var(--gold);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.high-score-display {
+    position: absolute; 
+    top: 10px; 
+    right: 10px;
+    font-size: 18px; 
+    font-weight: bold; 
+    color: #3498db;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+
+button {
+    background: linear-gradient(135deg, var(--gold) 0%, #FFD54F 100%);
+    border: none; 
+    padding: 15px 40px;
+    border-radius: 50px; 
+    font-weight: bold; 
+    cursor: pointer;
+    font-size: 18px; 
+    font-family: 'Fredoka'; 
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255,193,7,0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+button:hover { 
+    transform: scale(1.1); 
+    box-shadow: 0 8px 25px rgba(255,193,7,0.6);
+}
+
+.floating-emoji {
+    font-size: 60px;
+    animation: float 2s ease-in-out infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.rank-badge {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #f39c12 0%, #e74c3c 100%);
+    border-radius: 30px;
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 20px;
+    animation: bounceIn 0.6s ease;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stat-box {
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--gold);
+}
+
+.stat-label {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.hidden { display: none !important; }
+
+/* Parallax effect */
+.parallax-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('Fried-California-Sushi-Roll.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    margin: 40px 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.parallax-section h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+.parallax-section h2::after {
+    background: white;
+}
+
+.parallax-section p {
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    line-height: 1.6;
+}
+
+/* Sushi Section Styles */
+.hero-sushi {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('Fried-California-Sushi-Roll.png');
+}
+
+.parallax-sushi {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('Fried-California-Sushi-Roll.png');
+}
+
+#sushi-section .game-section {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+}
+
+#sushi-section .game-viewport {
+    border-color: var(--sushi-red);
+}
+
+#sushi-section .score-display {
+    color: var(--sushi-red);
+}
+
+#sushi-section button {
+    background: linear-gradient(135deg, var(--sushi-red) 0%, var(--sushi-dark) 100%);
+}
+
+#sushi-section button:hover {
+    box-shadow: 0 8px 25px rgba(231,76,60,0.6);
+}
+
+@media (max-width: 600px) {
+    .parallax-section {
+        background-attachment: scroll;
+        padding: 40px 20px;
+    }
+    .parallax-section h2 {
+        font-size: 1.8rem;
+    }
+    .main-nav {
+        top: 10px;
+        right: 10px;
+        padding: 10px 15px;
+        gap: 10px;
+    }
+    .nav-link {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}

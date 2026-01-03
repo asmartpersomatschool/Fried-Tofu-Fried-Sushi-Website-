@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietnamese Delights | Tofu & Fried Sushi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="floating-scallions">
+    <div class="scallion-float">🌿</div>
+    <div class="scallion-float">🌿</div>
+    <div class="scallion-float">🌿</div>
+    <div class="scallion-float">🌿</div>
+    <div class="scallion-float">🌿</div>
+    <div class="scallion-float">🍣</div>
+    <div class="scallion-float">🍣</div>
+</div>
+
+<!-- Navigation -->
+<nav class="main-nav">
+    <a href="#tofu-section" class="nav-link">Đậu Hũ Tẩm Hành</a>
+    <a href="#sushi-section" class="nav-link">Fried Sushi</a>
+</nav>
+
+<!-- TOFU SECTION -->
+<section id="tofu-section">
+<div class="hero">
+    <div class="hero-content">
+        <h1>Đậu Hũ Tẩm Hành</h1>
+        <p>Crispy Vietnamese Tofu with Scallion Sauce</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content-card">
+        <img src="tofu1.jpg" class="dish-image" alt="Vietnamese Tofu on plate" data-image-id="1">
+        
+        <h2>A Vietnamese Classic</h2>
+        <p>Commonly found in family meals across Vietnam, this dish is loved for its simplicity. The secret lies in dipping the <b>blistering hot tofu</b> into the cold scallion sauce, which creates a savory infusion unlike any other. <b>Đậu Hũ Tẩm Hành</b> is a popular <b>Vietnamese</b> dish featuring tofu that has been lightly fried until golden and crispy on the outside, while remaining soft on the inside. The dish is then generously topped with a fragrant mixture of sautéed green onions (scallions) and oil, often seasoned with a pinch of salt or a drizzle of soy sauce. This simple yet flavorful preparation is cherished for its delightful contrast in textures and its aromatic appeal, making it a beloved vegetarian or vegan option and a common addition to a <b>traditional Vietnamese</b> family meal.</p>
+
+        <div class="image-gallery">
+            <img src="tofu2.webp" class="gallery-item" alt="Tofu in dipping sauce" data-image-id="2">
+            <img src="tofu3.webp" class="gallery-item" alt="Golden fried tofu pieces" data-image-id="3">
+            <img src="tofu4.webp" class="gallery-item" alt="Tofu with rice" data-image-id="4">
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2>The Secret Sauce</h2>
+        <div class="recipe-grid">
+            <div>
+                <h3>Ingredients</h3>
+                <ul>
+                    <li><b>Firm or Extra Firm Tofu:</b> 1 lb (400-450g), drained and patted dry.</li>
+                    <li><b>Green onions (scallions):</b> 3-4 stalks (about 60g), thinly sliced, green parts only recommended for better texture and taste.</li>
+                    <li><b>Cooking Oil - (Vegetable or Canola):</b> For frying the tofu</li>
+                    <li><b>Salt:</b> 1 tsp.</li>
+                    <li>Water (or hot broth): 1/2 cup (around 120ml), preferably hot to help dissolve sugar quickly.</li>
+                    <li><b>Fish Sauce:</b> 3 tbsp. (A vegan alternative can be used if needed).</li>
+                    <li><b>Sugar:</b> 1 tbsp.</li>
+                    <li><b>Pinch of MSG:</b> 1/2 tsp. (Optional)</li>
+                    <li><b>Chopped Thai Chilies:</b> 1 1/2 chilies (Optional)</li>
+                    <li><b>Garlic:</b> 2 cloves (Optional)</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Best Method</h3>
+                <p>1. <b>Prepare the Sauce Base:</b> In a medium bowl, combine the sugar, fish sauce, and hot water (or broth). Stir until the sugar is completely dissolved. Add the chopped green onions to this mixture and set aside.</p>
+                <p>2. <b>Prepare the Tofu:</b> Drain, rinse, and thoroughly pat the tofu dry with paper towels to ensure a crispy fry. Cut the tofu into slices or pieces, about 1-1.5 cm thick.</p>
+                <p>3. <b>Fry the Tofu:</b> Heat enough neutral oil in a large frying pan over medium-low heat to cover the bottom. Once the oil is ready (test with a wooden chopstick; rapid bubbles should form around it), gently add the tofu pieces in a single layer, ensuring they are not touching. Fry until golden brown on all sides (about 10 minutes per side, approximately 20 minutes total), taking your time to ensure an even color and texture. Do not force flip the tofu if it's sticking to a stainless steel pan; wait until a crust has formed and it releases naturally.</p>
+                <p>4. <b>Combine Tofu and Sauce:</b> When the tofu is almost ready, have your serving plate and sauce bowl ready nearby. Immediately transfer the hot fried tofu into the scallion sauce mixture. You can also place the tofu on a plate and pour the sauce over it, gently stabbing the tofu with a fork to help it soak in the flavor.</p>
+                <p>5. <b>Serve Immediately:</b> Allow the tofu to soak in the sauce for at least 5 to 10 minutes (longer for deeper flavor) before serving warm. Enjoy the tofu while it's hot and crispy, paired with steamed rice or as part of a larger meal.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="game-section">
+        <h2 style="color: white; margin: 0;">Play: Scallion Catch!</h2>
+        <p>Help the tofu get seasoned! Avoid the red chilis. Reach 200 points to win!</p>
+        
+        <div class="game-viewport" id="gameViewport">
+            <div id="scoreBoard" class="score-display">SCORE: 0</div>
+            <div id="highScore" class="high-score-display">HIGH SCORE: 0</div>
+            <canvas id="gameCanvas"></canvas>
+            
+            <div id="startScreen" class="overlay">
+                <div class="floating-emoji">⬜🌿</div>
+                <h2>Ready to Cook?</h2>
+                <p>Catch the green scallions, avoid red chilies!</p>
+                <button id="startBtn">START COOKING</button>
+            </div>
+
+            <div id="gameOverScreen" class="overlay hidden">
+                <h2 style="color: #e74c3c; font-size: 2.5rem;">OH NO! TOO SPICY! 🌶️</h2>
+                <div class="rank-badge" id="rankBadge">🌱 Kitchen Helper</div>
+                <p id="finalScore" style="font-size: 1.8rem; margin: 10px 0;">Score: 0</p>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value" id="statScallions">0</div>
+                        <div class="stat-label">Scallions Caught</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="statTime">0s</div>
+                        <div class="stat-label">Time Survived</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="statHighScore">0</div>
+                        <div class="stat-label">High Score</div>
+                    </div>
+                </div>
+                <button id="retryBtn" style="margin-top: 20px;">🔄 RETRY</button>
+            </div>
+
+            <div id="winScreen" class="overlay hidden">
+                <h2 style="color: #27ae60; font-size: 3rem;">🎉 VICTORY! 🎉</h2>
+                <div class="floating-emoji">👨‍🍳</div>
+                <div class="rank-badge" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">🏆 Master Chef!</div>
+                <p style="font-size: 1.8rem; margin: 10px 0;">You've mastered the art of Đậu Hũ Tẩm Hành!</p>
+                <p id="winScore" style="font-size: 1.5rem; color: var(--gold);">Final Score: 0</p>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value" id="winScallions">0</div>
+                        <div class="stat-label">Scallions Caught</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="winTime">0s</div>
+                        <div class="stat-label">Time to Victory</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="winHighScore">0</div>
+                        <div class="stat-label">High Score</div>
+                    </div>
+                </div>
+                <button id="playAgainBtn" style="margin-top: 20px;">🎮 PLAY AGAIN</button>
+            </div>
+        </div>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Move your mouse or drag your finger to move the tofu!</p>
+    </div>
+</div>
+</section>
+
+<!-- FRIED SUSHI SECTION -->
+<section id="sushi-section">
+<div class="hero hero-sushi">
+    <div class="hero-content">
+        <h1>Fried Sushi Rolls</h1>
+        <p>Crispy Japanese Fusion Delight</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content-card">
+        <img src="fried-sushi1-main.webp" class="dish-image" alt="Fried Sushi Rolls">
+        
+        <h2>A Fusion Masterpiece</h2>
+        <p>Fried sushi rolls, also known as <b>tempura rolls</b>, bring a delightful crunch to traditional Japanese cuisine. These innovative rolls take classic sushi ingredients and coat them in a light, crispy batter before being deep-fried to golden perfection. The contrast between the <b>hot crispy exterior</b> and the cool sushi rice and fillings creates an unforgettable texture experience. Popular in fusion restaurants worldwide, fried sushi has become a beloved alternative for those who prefer cooked seafood or simply love the added dimension that frying brings. Often served with spicy mayo, eel sauce, or ponzu, these rolls represent the creative evolution of Japanese cuisine meeting Western tastes.</p>
+
+        <div class="image-gallery">
+            <img src="fried-sushi2.webp" class="gallery-item" alt="Golden fried sushi">
+            <img src="fried-sushi3.webp" class="gallery-item" alt="Sushi with sauce">
+            <img src="fried-sushi4.jpg" class="gallery-item" alt="Plated fried rolls">
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2>The Perfect Recipe</h2>
+        <div class="recipe-grid">
+            <div>
+                <h3>Ingredients</h3>
+                <ul>
+                    <li><b>Sushi Rice:</b> 2 cups (cooked and seasoned)</li>
+                    <li><b>Nori Sheets:</b> 4 sheets</li>
+                    <li><b>Filling Options:</b> Crab stick, avocado, cucumber, cream cheese, or cooked shrimp</li>
+                    <li><b>Tempura Batter:</b> 1 cup flour, 1 cup ice-cold water, 1 egg</li>
+                    <li><b>Panko Breadcrumbs:</b> 1 cup (optional for extra crunch)</li>
+                    <li><b>Vegetable Oil:</b> For deep frying</li>
+                    <li><b>Spicy Mayo:</b> 3 tbsp. mayo + 1 tbsp. sriracha</li>
+                    <li><b>Eel Sauce:</b> For drizzling</li>
+                    <li><b>Sesame Seeds:</b> For garnish</li>
+                    <li><b>Green Onions:</b> Chopped, for topping</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Preparation Method</h3>
+                <p>1. <b>Make the Rolls:</b> Place nori on a bamboo mat, spread sushi rice evenly, leaving 1 inch at the top. Add your fillings in a line across the center. Roll tightly using the mat, seal the edge with a bit of water.</p>
+                <p>2. <b>Prepare the Batter:</b> In a bowl, lightly mix flour, ice-cold water, and egg until just combined (lumps are okay). Keep the batter cold for best results.</p>
+                <p>3. <b>Coat the Rolls:</b> Cut each roll into 6-8 pieces. Dip each piece in tempura batter, then optionally roll in panko breadcrumbs for extra crunch.</p>
+                <p>4. <b>Fry to Perfection:</b> Heat oil to 350°F (175°C). Carefully place battered sushi pieces into the oil, fry for 2-3 minutes until golden brown, turning once. Don't overcrowd the pan.</p>
+                <p>5. <b>Serve Hot:</b> Drain on paper towels. Arrange on a plate, drizzle with spicy mayo and eel sauce, sprinkle with sesame seeds and green onions. Serve immediately while crispy!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-section parallax-sushi">
+        <h2>Experience Japanese Fusion Innovation</h2>
+        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Where tradition meets creativity in every crispy, delicious bite.</p>
+    </div>
+
+    <div class="game-section">
+        <h2 style="color: white; margin: 0;">Play: Sushi Catch!</h2>
+        <p>Help catch the flying sushi! Avoid the wasabi bombs. Reach 200 points to win!</p>
+        
+        <div class="game-viewport" id="sushiGameViewport">
+            <div id="sushiScoreBoard" class="score-display">SCORE: 0</div>
+            <div id="sushiHighScore" class="high-score-display">HIGH SCORE: 0</div>
+            <canvas id="sushiGameCanvas"></canvas>
+            
+            <div id="sushiStartScreen" class="overlay">
+                <div class="floating-emoji">🍣✨</div>
+                <h2>Ready to Catch?</h2>
+                <p>Catch the sushi rolls, avoid wasabi!</p>
+                <button id="sushiStartBtn">START GAME</button>
+            </div>
+
+            <div id="sushiGameOverScreen" class="overlay hidden">
+                <h2 style="color: #e74c3c; font-size: 2.5rem;">WASABI OVERLOAD! 🔥</h2>
+                <div class="rank-badge" id="sushiRankBadge">🍱 Beginner</div>
+                <p id="sushiFinalScore" style="font-size: 1.8rem; margin: 10px 0;">Score: 0</p>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value" id="sushiStatCaught">0</div>
+                        <div class="stat-label">Sushi Caught</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="sushiStatTime">0s</div>
+                        <div class="stat-label">Time Survived</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="sushiStatHighScore">0</div>
+                        <div class="stat-label">High Score</div>
+                    </div>
+                </div>
+                <button id="sushiRetryBtn" style="margin-top: 20px;">🔄 RETRY</button>
+            </div>
+
+            <div id="sushiWinScreen" class="overlay hidden">
+                <h2 style="color: #27ae60; font-size: 3rem;">🎉 SUSHI MASTER! 🎉</h2>
+                <div class="floating-emoji">👨‍🍳</div>
+                <div class="rank-badge" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">🏆 Sushi Champion!</div>
+                <p style="font-size: 1.8rem; margin: 10px 0;">You've mastered the art of Fried Sushi!</p>
+                <p id="sushiWinScore" style="font-size: 1.5rem; color: #e74c3c;">Final Score: 0</p>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value" id="sushiWinCaught">0</div>
+                        <div class="stat-label">Sushi Caught</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="sushiWinTime">0s</div>
+                        <div class="stat-label">Time to Victory</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="sushiWinHighScore">0</div>
+                        <div class="stat-label">High Score</div>
+                    </div>
+                </div>
+                <button id="sushiPlayAgainBtn" style="margin-top: 20px;">🎮 PLAY AGAIN</button>
+            </div>
+        </div>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Move your mouse or drag your finger to catch sushi!</p>
+    </div>
+</div>
+</section>
+
+<script src="main.js"></script>
+
+</body>
+</html>
