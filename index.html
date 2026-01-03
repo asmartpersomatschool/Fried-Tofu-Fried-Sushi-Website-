@@ -266,6 +266,26 @@
 </div>
 </section>
 
+<section id="poll-section" class="poll-container">
+    <h2>Which is your favorite?</h2>
+    <div class="poll-options">
+        <div class="poll-card" onclick="castVote('tofu')">
+            <span class="poll-emoji">🌿</span>
+            <h3>Đậu Hũ Tẩm Hành</h3>
+            <div class="progress-bar"><div id="tofu-bar" class="progress-fill"></div></div>
+            <span id="tofu-percent">0%</span>
+        </div>
+        <div class="poll-vs">VS</div>
+        <div class="poll-card" onclick="castVote('sushi')">
+            <span class="poll-emoji">🍣</span>
+            <h3>Fried Sushi</h3>
+            <div class="progress-bar"><div id="sushi-bar" class="progress-fill"></div></div>
+            <span id="sushi-percent">0%</span>
+        </div>
+    </div>
+    <p id="poll-thanks" style="display:none; margin-top: 20px; font-weight: bold; color: var(--dark-green);">Thanks for voting!</p>
+</section>
+
 <script src="main.js"></script>
 
 </body>
